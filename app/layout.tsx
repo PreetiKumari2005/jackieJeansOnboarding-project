@@ -1,4 +1,4 @@
-import '@/styles/globals.css';
+import "./globals.css"; // Double check the quotes and the exact matching casing
 import type { Metadata } from 'next';
 
 export const metadata: Metadata = {
