@@ -71,6 +71,38 @@ export default function QuizStepClient({ stepId }: QuizStepClientProps) {
           </div>
         )}
 
+        {/* ADDED: Waist Measurement Numerical Input Box */}
+        {stepId === 'waist' && (
+          <div className="relative">
+            <input 
+              type="number" 
+              placeholder="e.g. 28"
+              value={answers.waist || ''}
+              onChange={(e) => setAnswer('waist', e.target.value)}
+              className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-4 text-base focus:outline-none focus:ring-2 focus:ring-neutral-900"
+              min="20"
+              max="60"
+            />
+            <span className="absolute right-4 top-4.5 text-neutral-400 text-sm">inches</span>
+          </div>
+        )}
+
+        {/* ADDED: Hip Measurement Numerical Input Box */}
+        {stepId === 'hip' && (
+          <div className="relative">
+            <input 
+              type="number" 
+              placeholder="e.g. 36"
+              value={answers.hip || ''}
+              onChange={(e) => setAnswer('hip', e.target.value)}
+              className="w-full bg-neutral-50 border border-neutral-200 rounded-xl px-4 py-4 text-base focus:outline-none focus:ring-2 focus:ring-neutral-900"
+              min="20"
+              max="70"
+            />
+            <span className="absolute right-4 top-4.5 text-neutral-400 text-sm">inches</span>
+          </div>
+        )}
+
         {/* Fit Profiles Configurations Grid */}
         {['waistFit', 'rise', 'thighFit'].includes(stepId) && (
           <div className="space-y-3">
